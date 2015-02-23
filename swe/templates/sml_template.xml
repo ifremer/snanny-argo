@@ -1,0 +1,129 @@
+<sml:PhysicalSystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:sml="http://www.opengis.net/sensorml/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swe="http://www.opengis.net/swe/2.0" xsi:schemaLocation="http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd" gml:id="top">
+         <!-- ##### TITLE from deployment file ######## -->
+            <gml:description>___name___</gml:description>
+            <gml:name>___description___</gml:name>                
+    <sml:identification>
+        <sml:IdentifierList>
+            <!-- #### uuid ##### -->
+            <sml:identifier>
+                <sml:Term definition="http://www.ifremer.fr/tematres/vocab/index.php?tema=66">
+                    <sml:label>uuid</sml:label>
+                    <!-- #### calcul fait par UUIDGEN ####-->
+                    <sml:value>___localuuid___</sml:value>
+                </sml:Term>
+            </sml:identifier>
+            
+            
+            <!-- #### WMO PLATFORM NUMBER ##### -->
+            <sml:identifier>
+                <sml:Term definition="http://www.ifremer.fr/tematres/vocab/index.php?tema=47">
+                    <sml:label>platformNumber</sml:label>
+                    <sml:value>___wmoplatformcode___</sml:value>
+                </sml:Term>
+            </sml:identifier>  
+           <!-- #### WMO PLATFORM TYPE ##### -->
+           ___platformserialno___
+           ___platformtype___           
+            <!-- ###### PLATFORM_MAKER ######## -->
+            <sml:identifier>
+                <sml:Term definition="http://www.ifremer.fr/tematres/vocab/index.php?tema=52">
+                    <sml:label>manufacturer</sml:label>                    
+                    <sml:value>___platformmaker___</sml:value>
+                </sml:Term>
+            </sml:identifier>                                
+        </sml:IdentifierList>
+    </sml:identification>
+    <sml:classification>
+        <sml:ClassifierList>
+            <!-- #### PLATFORM_FAMILY ############### -->
+            <sml:classifier>
+                <sml:Term definition="http://www.ifremer.fr/tematres/vocab/index.php?tema=51">
+                    <sml:label>family</sml:label>
+                    <sml:codeSpace xlink:href="http://vocab.nerc.ac.uk/collection/L06/current/"/>
+                    <sml:value>drifting subsurface profiling float</sml:value>
+                </sml:Term>
+            </sml:classifier>                 
+        </sml:ClassifierList>        
+    </sml:classification>
+    
+    <!-- Periode pendant laquelle la description la description courante est applicable -->
+    <sml:validTime>
+        <gml:TimePeriod gml:id="validTime">
+            <gml:beginPosition>___launchdate___</gml:beginPosition>
+            ___enddate___
+        </gml:TimePeriod>        
+    </sml:validTime>
+    <sml:contacts>
+        <sml:ContactList>
+            <sml:contact>
+                <gmd:CI_ResponsibleParty>
+                    <!--###### argo metadata -> PI_NAME ####-->
+                    <gmd:individualName><gco:CharacterString>___piname___</gco:CharacterString></gmd:individualName>                  
+                    <!--###### argo metadata -> PROJECT_NAME ####-->
+                    <gmd:organisationName><gco:CharacterString>___project_name___</gco:CharacterString></gmd:organisationName>                   
+                    <gmd:role><gmd:CI_RoleCode codeList="http://www.ifremer.fr/tematres/vocab/index.php?tema=67" codeListValue="principal investigator"/></gmd:role>                    
+                </gmd:CI_ResponsibleParty>
+           
+            </sml:contact>           
+        </sml:ContactList>
+        
+    </sml:contacts>
+           
+    <sml:documentation>
+        <sml:DocumentList>
+            <sml:document>                
+                <gmd:CI_OnlineResource>                    
+                    <gmd:linkage>
+                        <gmd:URL>http://www.ifremer.fr/co-argoFloats/float?detail=true&gt;ptfCode=___wmoplatformcode___&gt;lang=en</gmd:URL>                       
+                    </gmd:linkage>
+                     <gmd:name>
+                         <gco:CharacterString>platform online resources</gco:CharacterString>
+                    </gmd:name>
+                    <gmd:description>
+                        <gco:CharacterString>platform online resources</gco:CharacterString>
+                    </gmd:description>
+                    <gmd:function><gmd:CI_OnLineFunctionCode codeList="http://www.ifremer.fr/tematres/vocab/index.php?tema=99" codeListValue="about"/></gmd:function>
+                </gmd:CI_OnlineResource>                
+            </sml:document>
+        </sml:DocumentList>      
+    </sml:documentation>         
+    <sml:history>
+        <sml:EventList>
+            <sml:event>
+                <sml:Event>
+                    <sml:time>
+                        <!-- ###### LAUNCH_DATE ######## -->
+                        <gml:TimeInstant gml:id="deployment">
+                        <gml:timePosition>___launchdate___</gml:timePosition>
+                    </gml:TimeInstant>
+                    </sml:time>
+                    <sml:property xlink:role="location">
+                        <!-- ###### Position du déploiement toujours en WGS84 ######## -->
+                        
+                            <swe:Vector referenceFrame="http://www.opengis.net/def/crs/EPSG/0/4326">                                
+                                <swe:coordinate name="longitude">                                              
+                                    <swe:Quantity>
+                                        <swe:uom code="degree"/>
+                                        <!-- ###### LAUNCH_LONGITUDE ################ -->
+                                        <swe:value>0.0267</swe:value>
+                                    </swe:Quantity>
+                                </swe:coordinate>
+                                <swe:coordinate name="latitude">
+                                    <swe:Quantity>
+                                        <swe:uom code="degree"/>
+                                        <!-- ############# LAUNCH_LATIITUDE ############ --> 
+                                        <swe:value>49.4852</swe:value>
+                                    </swe:Quantity>
+                                </swe:coordinate>     
+                            </swe:Vector>                                      
+                        
+                        
+                    </sml:property>
+                </sml:Event>
+                
+            </sml:event>
+        </sml:EventList>
+        </sml:history>
+           
+    
+</sml:PhysicalSystem>

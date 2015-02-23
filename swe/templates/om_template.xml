@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:InsertObservation service="SOS" version="2.0.0" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sml="http://www.opengis.net/sensorML/1.0.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:sf="http://www.opengis.net/sampling/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd"> <!-- multiple offerings are possible --> <sos:offering>[Offering]</sos:offering> <sos:observation>
+<om:OM_Observation gml:id="top" 
+    xmlns:om="http://www.opengis.net/om/2.0" 
+    xmlns:gco="http://www.isotc211.org/2005/gco"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:swe="http://schemas.opengis.net/sweCommon/2.0/"
+    xsi:schemaLocation="http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd">
+    
+    <gml:identifier codeSpace="uuid">___localuuid___</gml:identifier>   
+    <!-- name composed from platform number (in file name) and date -->
+    <gml:name>profile from float ___platformnumber___ on ___profiledate___</gml:name>  
+    
+    <gml:boundedBy>
+                <gml:Envelope>          
+                    <!-- RES_LATSUD, RES_LONWES (latitude, longitude)-->
+                    <gml:lowerCorner>___latitude___ ___longitude___</gml:lowerCorner>
+                    <!-- RES_LATNOR, RES_LONEST = RES_LATSUD, RES_LONWES car mesure ponctuelle -->
+                    <gml:upperCorner>___latitude___ ___longitude___</gml:upperCorner>      						
+                </gml:Envelope>				
+    </gml:boundedBy>
+    
+    <!-- always : 	http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement			 --> 
+    <om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement"/>                      
+    
+    <!-- temporal extent which the observation relates to, for trajectory start and stop time value (begin<=end) -->
+    <om:phenomenonTime>
+        <gml:TimePeriod gml:id="temporalExtent">
+            <!-- RES_DATEDEB, ISO8601 format -->
+            <gml:beginPosition>___profiledate___</gml:beginPosition>
+            <!-- RES_DATEFIN = RES_DATEDEB car mesure instantannée (ou assimilée), ISO8601 format-->
+            <gml:endPosition>___profiledate___</gml:endPosition>
+        </gml:TimePeriod>
+    </om:phenomenonTime>
+    
+    <!-- update time of the observation result -->
+    <!-- time of file as index (date_update), ISO8601 format -->
+    <om:resultTime>
+      <gml:TimeInstant gml:id="updateDate">
+        <gml:timePosition>___updatedate___</gml:timePosition>
+      </gml:TimeInstant>
+    </om:resultTime>
+    
+    <!-- platform from which acquisition has been done-->
+    <!-- URL to sensorML which describes the sensor request on SOST server -->
+    <om:procedure xlink:href="___procedureuri___" />
+    
+    
+    <!-- can be described in a local resource shared by observations providing for example Temperature and Salinity -->
+    <!-- see for example for weather : http://schemas.opengis.net/om/2.0/examples/swe_weather1.xml					-->
+    <om:observedProperty xlink:href="http://www.ifremer.fr/isi/seadatanet/swe/swe_oceanPhysics.xml"/>
+    
+    <!-- should be on sampling feature 									-->
+    <!-- the sampling feature should have an "intention" attribute		-->
+    <!-- telling which is the domain feature, xlink:href="http://vocab.nerc.ac.uk/collection/L02/current/006/"  			-->	
+    <!-- when observation relates to the observation platform itseklf (navigation, attide, any technical parameters, then "this" is used -->
+    <om:featureOfInterest xlink:href="http://www.ifremer.fr/tematres/vocab/index.php?tema=8" />
+    
+    <!-- measurements values																	  -->
+    <!-- encoding details depend on the sampling feature 										  -->
+    <!-- for each sampling feature different encoding option are available 						  -->
+    <!-- example out of http://schemas.opengis.net/om/2.0/examples/SWEArrayObservation1.xml       -->
+    <om:result xlink:href="___filepath___"
+        xlink:role="application/netcdf"  
+        >        
+    </om:result>
+                        	                        	                      </om:OM_Observation>
+</sos:observation> </sos:InsertObservation>

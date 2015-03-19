@@ -1,0 +1,27 @@
+{
+  "type":"Feature",
+  "geometry":{
+    "type":"Point",
+    "coordinates":[
+      ___longitude___,
+      ___latitude___
+    ]
+  },
+  "properties":{
+    "uuid":"___localuuid___",
+    "author":"tloubrie",
+    "name":"profile from float ___platformnumber___ on ___profiledate___",
+    "result":"___filepath___",
+    "ancestors":[
+      ___procedurekey___
+    ],
+    "resulttimestamp":___profiledate___,
+    "updatetimestamp":___updatedate___,
+    "geohash":[
+       ___geohash___
+    ],
+    "resulttimehash":[
+      ___timehash___
+    ]
+  }
+}

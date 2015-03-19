@@ -1,0 +1,29 @@
+{
+  "author":"tloubrieu",
+  "properties":{
+    "name":"___name___",
+    "description":"___description___",
+    "uuid":"___localuuid___",
+    "platformNumber":"___wmoplatformcode___",
+      ___platformserialno___
+      ___platformtype___
+      "manufacturer":"___platformmaker___",
+      "family":"drifting subsurface profiling float"
+  },
+  "contacts":{
+    "principalInvestigator":{
+      "name":"___piname___"
+    },
+    "custodian":{
+      "name":"GENAVIR",
+      "email":"genavir@ifremer.fr"
+    }
+},
+  "validTime":{
+    "from":"___launchdate___",
+    ___enddate___
+  },
+   "ancestors":[
+      "4ae81461-170f-493f-b0c8-d3b14013224c"
+   ]
+}

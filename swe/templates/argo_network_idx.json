@@ -1,0 +1,17 @@
+{  
+   "author":"tloubrieu",
+   "properties":{  
+      "name":"argo",
+      "description":"argo network"
+      "uuid":"4ae81461-170f-493f-b0c8-d3b14013224c",   
+   },
+   "contacts":{  
+      "coordinator":{  
+         "name":"argo information centre",       
+	 "homepage":"http://www.jcommops.org/argo"
+      },     
+   },   
+   "ancestors":[
+      ""
+   ]
+}

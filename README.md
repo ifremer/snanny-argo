@@ -1,6 +1,16 @@
 # snanny-argo
 
-Tools for creating SWE records (sensorML and O&M) from ARGO GDAC files.
-Tools for pushing the records to the SOST server provided by sensorNanny.
+# requirements
+
+timehast
+cd scripts
+wget https://raw.githubusercontent.com/abeusher/timehash/master/timehash.py
+
+geohash
+download from:
+
+https://pypi.python.org/pypi/python-geohash
+tar xvzf ...
+sudo python setup.py install
 
 
